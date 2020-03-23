@@ -1,0 +1,16 @@
+PODS:
+  - NNButton (0.1.0)
+
+DEPENDENCIES:
+  - NNButton (from `../`)
+
+EXTERNAL SOURCES:
+  NNButton:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  NNButton: 195735f91056b0755cc9cefdac34190de2c5c88a
+
+PODFILE CHECKSUM: 296e0e23636bde39be19757b6b0cd54c892648e6
+
+COCOAPODS: 1.9.1
