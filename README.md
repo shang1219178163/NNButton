@@ -12,49 +12,63 @@ NSButton 封装, 仿 UIButton
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 ```
-    lazy var btnFive: NNButton = {
-        let view = NNButton(type: .typeText)
-        view.setTitle("NNButton_typeText", for: .normal)
+typedef NS_OPTIONS(NSInteger, NNControlState) {
+    NNControlStateNormal       = 1 << 0,
+    NNControlStateHighlighted  = 1 << 1,
+    NNControlStateDisabled     = 1 << 2,
+    NNControlStateSelected     = 1 << 3,
+    NNControlStateHover        = 1 << 4,
+};
+
+typedef NS_ENUM(NSInteger, NNButtonType) {
+    NNButtonTypeText = 0,   //just text
+    NNButtonType1 = 1,      //backgroud: white , text: blue, has bordColor
+    NNButtonType2 = 2,      //backgroud: blue , text: white
+};
+
+lazy var btnFive: NNButton = {
+    let view = NNButton(type: .typeText)
+    view.setTitle("NNButton_typeText", for: .normal)
 //        view.isEnabled = false
 
-        view.addTarget(self, action: #selector(handleActionBtn(_:)))
-        return view
-    }()
+    view.addTarget(self, action: #selector(handleActionBtn(_:)))
+    return view
+}()
     
-    lazy var btnSix: NNButton = {
-        let view = NNButton(type: .type1)
-        view.setTitle("NNButton_type1", for: .normal)
-        view.setTitleColor(NSColor.lightBlue, for: .normal)
+lazy var btnSix: NNButton = {
+    let view = NNButton(type: .type1)
+    view.setTitle("NNButton_type1", for: .normal)
+    view.setTitleColor(NSColor.lightBlue, for: .normal)
 //        view.isEnabled = false
 
-        view.addTarget(self, action: #selector(handleActionBtn(_:)))
-        return view
-    }()
+    view.addTarget(self, action: #selector(handleActionBtn(_:)))
+    return view
+}()
     
-    lazy var btnSeven: NNButton = {
-        let view = NNButton(type: .type2)
-        view.setTitle("NNButton_type2", for: .normal)
+lazy var btnSeven: NNButton = {
+    let view = NNButton(type: .type2)
+    view.setTitle("NNButton_type2", for: .normal)
 //        view.isEnabled = false
 
-        view.addTarget(self, action: #selector(handleActionBtn(_:)))
-        return view
-    }()
+    view.addTarget(self, action: #selector(handleActionBtn(_:)))
+    return view
+}()
     
-    lazy var btnEight: NNButton = {
-        let view = NNButton(type: .type2)
-        view.setTitle("NNButton_disabled", for: .normal)
-        view.isEnabled = false
+lazy var btnEight: NNButton = {
+    let view = NNButton(type: .type2)
+    view.setTitle("NNButton_disabled", for: .normal)
+    view.isEnabled = false
 
-        view.addTarget(self, action: #selector(handleActionBtn(_:)))
-        return view
-    }()
+    view.addTarget(self, action: #selector(handleActionBtn(_:)))
+    return view
+}()
     
-    @objc func handleActionBtn(_ sender: NNButton) {
+@objc func handleActionBtn(_ sender: NNButton) {
 //        sender.selected = !sender.selected
 //        DDLog("\(sender)_\(sender.selected)_\(sender.isHighlighted)")
-        
+    
 //        sender.layer?.cornerRadius = sender.selected ? 10 : 0
-    }
+}
 ```
 ## Requirements
 
