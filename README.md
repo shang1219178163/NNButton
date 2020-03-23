@@ -1,9 +1,8 @@
 # NNButton
 
-[![CI Status](https://img.shields.io/travis/shang1219178163/NNButton.svg?style=flat)](https://travis-ci.org/shang1219178163/NNButton)
-[![Version](https://img.shields.io/cocoapods/v/NNButton.svg?style=flat)](https://cocoapods.org/pods/NNButton)
-[![License](https://img.shields.io/cocoapods/l/NNButton.svg?style=flat)](https://cocoapods.org/pods/NNButton)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Platform](https://img.shields.io/cocoapods/p/NNButton.svg?style=flat)](https://cocoapods.org/pods/NNButton)
+[![Version](https://img.shields.io/cocoapods/v/NNButton.svg?style=flat)](https://cocoapods.org/pods/NNButton)
 
 ## Example
 
