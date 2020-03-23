@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'NNButton_Example' do
+  pod 'NNButton', :path => '../'
+
+  target 'NNButton_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
