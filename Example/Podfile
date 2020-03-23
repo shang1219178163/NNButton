@@ -1,8 +1,15 @@
+platform :osx, '10.12'
 use_frameworks!
 
 target 'NNButton_Example' do
   pod 'NNButton', :path => '../'
 
+  pod 'Masonry'
+  pod 'SnapKit'
+  pod 'SnapKitExtend'
+  
+  pod 'CocoaExpand'
+  
   target 'NNButton_Tests' do
     inherit! :search_paths
 

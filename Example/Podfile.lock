@@ -1,16 +1,36 @@
 PODS:
-  - NNButton (0.1.0)
+  - CocoaExpand (1.0.9.5)
+  - Masonry (1.1.0)
+  - NNButton (0.1.1)
+  - SnapKit (5.0.1)
+  - SnapKitExtend (1.0.7):
+    - SnapKit
 
 DEPENDENCIES:
+  - CocoaExpand
+  - Masonry
   - NNButton (from `../`)
+  - SnapKit
+  - SnapKitExtend
+
+SPEC REPOS:
+  trunk:
+    - CocoaExpand
+    - Masonry
+    - SnapKit
+    - SnapKitExtend
 
 EXTERNAL SOURCES:
   NNButton:
     :path: "../"
 
 SPEC CHECKSUMS:
-  NNButton: 195735f91056b0755cc9cefdac34190de2c5c88a
+  CocoaExpand: 90ac3f2c06ad42a6585567d72715a6f473b3d41e
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  NNButton: b9b11875825aadf7a4c90952a7e49228344e4573
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SnapKitExtend: 00ee4db6d1f80bee01a1e75745f2a6ae695ba662
 
-PODFILE CHECKSUM: 296e0e23636bde39be19757b6b0cd54c892648e6
+PODFILE CHECKSUM: 7843e68420d005ec160cb130dca83bbb72cca537
 
 COCOAPODS: 1.9.1

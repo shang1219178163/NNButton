@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1477870924285B8C00D438CC /* NNCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1477870824285B8C00D438CC /* NNCollectionView.m */; };
+		1477870C24285BA800D438CC /* NNHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1477870A24285BA800D438CC /* NNHeaderFooterView.swift */; };
+		1477870D24285BA800D438CC /* NNCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1477870B24285BA800D438CC /* NNCollectionViewItem.swift */; };
+		1477871A2428613300D438CC /* HHButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1477870E2428613200D438CC /* HHButton.m */; };
+		1477871C2428613300D438CC /* AAButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 147787112428613300D438CC /* AAButton.m */; };
+		1477871D2428613300D438CC /* OOButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 147787122428613300D438CC /* OOButton.m */; };
+		1477871E2428613300D438CC /* RRButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 147787162428613300D438CC /* RRButton.m */; };
+		14778726242867F200D438CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14778725242867F200D438CC /* Main.storyboard */; };
+		14778728242868C400D438CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14778727242868C400D438CC /* ViewController.swift */; };
 		32E3F4ACA31789F103206228 /* Pods_NNButton_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B51652CE6CBB3E290DE5871 /* Pods_NNButton_Example.framework */; };
 		5C03CC3EF5800281F7604891 /* Pods_NNButton_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF88BCE16C9A83B446474B74 /* Pods_NNButton_Tests.framework */; };
 		ED83F67C20348A760038D96B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED83F67B20348A760038D96B /* AppDelegate.swift */; };
-		ED83F67E20348A760038D96B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED83F67D20348A760038D96B /* ViewController.swift */; };
 		ED83F68020348A760038D96B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED83F67F20348A760038D96B /* Assets.xcassets */; };
-		ED83F68320348A760038D96B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED83F68120348A760038D96B /* Main.storyboard */; };
 		ED83F68F20348A760038D96B /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED83F68E20348A760038D96B /* Tests.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,23 +34,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D20D7F144B11536737220E1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		0D20D7F144B11536737220E1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		1477870624285B8C00D438CC /* NNButton_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NNButton_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		1477870724285B8C00D438CC /* NNCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNCollectionView.h; sourceTree = "<group>"; };
+		1477870824285B8C00D438CC /* NNCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNCollectionView.m; sourceTree = "<group>"; };
+		1477870A24285BA800D438CC /* NNHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NNHeaderFooterView.swift; sourceTree = "<group>"; };
+		1477870B24285BA800D438CC /* NNCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NNCollectionViewItem.swift; sourceTree = "<group>"; };
+		1477870E2428613200D438CC /* HHButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHButton.m; sourceTree = "<group>"; };
+		147787102428613200D438CC /* RRButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRButton.h; sourceTree = "<group>"; };
+		147787112428613300D438CC /* AAButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAButton.m; sourceTree = "<group>"; };
+		147787122428613300D438CC /* OOButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OOButton.m; sourceTree = "<group>"; };
+		147787132428613300D438CC /* HHButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHButton.h; sourceTree = "<group>"; };
+		147787142428613300D438CC /* AAButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAButton.h; sourceTree = "<group>"; };
+		147787162428613300D438CC /* RRButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRButton.m; sourceTree = "<group>"; };
+		147787192428613300D438CC /* OOButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OOButton.h; sourceTree = "<group>"; };
+		14778725242867F200D438CC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		14778727242868C400D438CC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3392B0297B7ACBECFE95E0F2 /* Pods-NNButton_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NNButton_Tests.debug.xcconfig"; path = "Target Support Files/Pods-NNButton_Tests/Pods-NNButton_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		47A5C194E4731F3699C8AC5E /* Pods-NNButton_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NNButton_Example.release.xcconfig"; path = "Target Support Files/Pods-NNButton_Example/Pods-NNButton_Example.release.xcconfig"; sourceTree = "<group>"; };
 		5B51652CE6CBB3E290DE5871 /* Pods_NNButton_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NNButton_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6301E01E662139F19CD83E82 /* Pods-NNButton_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NNButton_Tests.release.xcconfig"; path = "Target Support Files/Pods-NNButton_Tests/Pods-NNButton_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		996354BD3C4DA1311E7D0A1D /* NNButton.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = NNButton.podspec; path = ../NNButton.podspec; sourceTree = "<group>"; };
+		996354BD3C4DA1311E7D0A1D /* NNButton.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = NNButton.podspec; path = ../NNButton.podspec; sourceTree = "<group>"; };
 		ED83F67820348A760038D96B /* NNButton_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NNButton_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED83F67B20348A760038D96B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ED83F67D20348A760038D96B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ED83F67F20348A760038D96B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		ED83F68220348A760038D96B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED83F68420348A760038D96B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED83F68520348A760038D96B /* NNButton.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NNButton.entitlements; sourceTree = "<group>"; };
 		ED83F68A20348A760038D96B /* NNButton_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NNButton_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED83F68E20348A760038D96B /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		ED83F69020348A760038D96B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDCB9CDBB7764770006C0AAD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		EDCB9CDBB7764770006C0AAD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F82D68274FC6FB4030AB0672 /* Pods-NNButton_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NNButton_Example.debug.xcconfig"; path = "Target Support Files/Pods-NNButton_Example/Pods-NNButton_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		FF88BCE16C9A83B446474B74 /* Pods_NNButton_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NNButton_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -68,6 +88,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		147787202428613700D438CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				147787142428613300D438CC /* AAButton.h */,
+				147787112428613300D438CC /* AAButton.m */,
+				147787132428613300D438CC /* HHButton.h */,
+				1477870E2428613200D438CC /* HHButton.m */,
+				147787192428613300D438CC /* OOButton.h */,
+				147787122428613300D438CC /* OOButton.m */,
+				147787102428613200D438CC /* RRButton.h */,
+				147787162428613300D438CC /* RRButton.m */,
+				1477870724285B8C00D438CC /* NNCollectionView.h */,
+				1477870824285B8C00D438CC /* NNCollectionView.m */,
+				1477870B24285BA800D438CC /* NNCollectionViewItem.swift */,
+				1477870A24285BA800D438CC /* NNHeaderFooterView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14778722242861AC00D438CC /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				14778725242867F200D438CC /* Main.storyboard */,
+				ED83F67F20348A760038D96B /* Assets.xcassets */,
+				ED83F68420348A760038D96B /* Info.plist */,
+				ED83F68520348A760038D96B /* NNButton.entitlements */,
+				1477870624285B8C00D438CC /* NNButton_Example-Bridging-Header.h */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
 		2738777EA283BD585F801EE4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,7 +127,6 @@
 				3392B0297B7ACBECFE95E0F2 /* Pods-NNButton_Tests.debug.xcconfig */,
 				6301E01E662139F19CD83E82 /* Pods-NNButton_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -113,12 +163,10 @@
 		ED83F67A20348A760038D96B /* NNButton */ = {
 			isa = PBXGroup;
 			children = (
+				14778722242861AC00D438CC /* Resource */,
+				147787202428613700D438CC /* View */,
 				ED83F67B20348A760038D96B /* AppDelegate.swift */,
-				ED83F67D20348A760038D96B /* ViewController.swift */,
-				ED83F67F20348A760038D96B /* Assets.xcassets */,
-				ED83F68120348A760038D96B /* Main.storyboard */,
-				ED83F68420348A760038D96B /* Info.plist */,
-				ED83F68520348A760038D96B /* NNButton.entitlements */,
+				14778727242868C400D438CC /* ViewController.swift */,
 			);
 			path = NNButton;
 			sourceTree = "<group>";
@@ -196,6 +244,7 @@
 				TargetAttributes = {
 					ED83F67720348A760038D96B = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 					};
 					ED83F68920348A760038D96B = {
@@ -230,7 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED83F68020348A760038D96B /* Assets.xcassets in Resources */,
-				ED83F68320348A760038D96B /* Main.storyboard in Resources */,
+				14778726242867F200D438CC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,11 +362,19 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-NNButton_Example/Pods-NNButton_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CocoaExpand/CocoaExpand.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/NNButton/NNButton.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKitExtend/SnapKitExtend.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaExpand.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NNButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKitExtend.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -331,8 +388,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED83F67E20348A760038D96B /* ViewController.swift in Sources */,
+				1477871E2428613300D438CC /* RRButton.m in Sources */,
+				1477871A2428613300D438CC /* HHButton.m in Sources */,
+				1477871D2428613300D438CC /* OOButton.m in Sources */,
 				ED83F67C20348A760038D96B /* AppDelegate.swift in Sources */,
+				14778728242868C400D438CC /* ViewController.swift in Sources */,
+				1477871C2428613300D438CC /* AAButton.m in Sources */,
+				1477870C24285BA800D438CC /* NNHeaderFooterView.swift in Sources */,
+				1477870924285B8C00D438CC /* NNCollectionView.m in Sources */,
+				1477870D24285BA800D438CC /* NNCollectionViewItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,17 +417,6 @@
 			targetProxy = ED83F68B20348A760038D96B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		ED83F68120348A760038D96B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ED83F68220348A760038D96B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		ED83F69120348A760038D96B /* Debug */ = {
@@ -481,6 +534,7 @@
 			baseConfigurationReference = F82D68274FC6FB4030AB0672 /* Pods-NNButton_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NNButton/NNButton.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
@@ -490,6 +544,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.demo.NNButton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NNButton/NNButton_Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -499,6 +555,7 @@
 			baseConfigurationReference = 47A5C194E4731F3699C8AC5E /* Pods-NNButton_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NNButton/NNButton.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
@@ -508,6 +565,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.demo.NNButton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NNButton/NNButton_Example-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
