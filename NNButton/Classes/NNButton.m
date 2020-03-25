@@ -39,7 +39,6 @@ NSString * const kCornerRadius = @"CornerRadius";
 
 @end
 
-
 @implementation NNButton
 
 - (void)dealloc{
@@ -71,11 +70,24 @@ NSString * const kCornerRadius = @"CornerRadius";
     NSImage *image = self.backgroundImage ? : [NSImage imageWithColor:NSColor.whiteColor];
     if (image) {
         [image drawInRect:self.bounds];
-//        CGRect rect = CGRectMake(self.layer.borderWidth, self.layer.borderWidth, CGRectGetWidth(self.bounds) - self.layer.borderWidth*2, CGRectGetHeight(self.bounds) - self.layer.borderWidth*2);
-//        [image drawInRect:rect];
     }
+    self.lineBreakMode = NSLineBreakByWordWrapping;
+    
+    if (self.isAttributedTitle) {
+        CGSize size = [self.attributedTitle boundingRectWithSize:self.bounds.size
+                                                         options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+                                                         context:nil].size;
+                
+        CGFloat gapX = (CGRectGetWidth(self.bounds) - size.width)/2;
+        CGFloat gapY = (CGRectGetHeight(self.bounds) - size.height)/2;
         
-    if (self.title) {
+        CGRect contentRect = NSMakeRect(floorf(gapX), floorf(gapY), size.width, size.height);
+        [self.attributedTitle drawInRect:contentRect];
+        
+    } else {
+        if (!self.title) {
+            return;
+        }
         NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle defaultParagraphStyle]mutableCopy];
         paraStyle.alignment = self.alignment ? self.alignment : NSTextAlignmentCenter;
         
@@ -85,10 +97,31 @@ NSString * const kCornerRadius = @"CornerRadius";
                                 }.mutableCopy;
         
         NSAttributedString *attString = [[NSAttributedString alloc]initWithString:self.title attributes:attrDic];
-        CGFloat fontHeight = ceil(self.font.boundingRectForFont.size.height);
-        CGFloat gapY = CGRectGetMidY(self.bounds) - fontHeight/2;
-        [attString drawInRect:NSMakeRect(0, gapY, self.frame.size.width, fontHeight)];
+        CGSize size = [attString boundingRectWithSize:self.bounds.size
+                                              options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+                                              context:nil].size;
+        
+        CGFloat gapX = (CGRectGetWidth(self.bounds) - size.width)/2;
+        CGFloat gapY = (CGRectGetHeight(self.bounds) - size.height)/2;
+
+        CGRect contentRect = NSMakeRect(floorf(gapX), floorf(gapY), size.width, size.height);
+        [attString drawInRect:contentRect];
     }
+        
+//    if (self.title) {
+//        NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle defaultParagraphStyle]mutableCopy];
+//        paraStyle.alignment = self.alignment ? self.alignment : NSTextAlignmentCenter;
+//
+//        NSDictionary *attrDic = @{NSParagraphStyleAttributeName: paraStyle,
+//                                  NSForegroundColorAttributeName: self.titleColor ? : NSColor.labelColor,
+//                                  NSFontAttributeName: self.font,
+//                                }.mutableCopy;
+//
+//        NSAttributedString *attString = [[NSAttributedString alloc]initWithString:self.title attributes:attrDic];
+//        CGFloat fontHeight = ceil(self.font.boundingRectForFont.size.height);
+//        CGFloat gapY = CGRectGetMidY(self.bounds) - fontHeight/2;
+//        [attString drawInRect:NSMakeRect(0, gapY, self.frame.size.width, fontHeight)];
+//    }
 }
 
 - (void)viewWillMoveToSuperview:(NSView *)newSuperview {

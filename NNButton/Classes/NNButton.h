@@ -34,6 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, assign) BOOL selected;
 @property(nonatomic, assign) BOOL showHighlighted;
+@property(nonatomic, assign) BOOL isAttributedTitle;
 
 @property(nonatomic, strong) NSColor *titleColor;
 @property(nonatomic, strong) NSColor *backgroundColor;

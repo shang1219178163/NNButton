@@ -42,10 +42,10 @@ class ViewController: NSViewController {
         view.setTitleColor(NSColor.white, for: .highlighted)
         view.setTitleColor(NSColor.orange, for: .hover)
 
-//        view.setBackgroundImage(NSImage.imageWithColor(NSColor.lightBlue), for: .normal)
-//        view.setBackgroundImage(NSImage.imageWithColor(NSColor.lightGreen), for: .selected)
-//        view.setBackgroundImage(NSImage.imageWithColor(NSColor.red), for: .highlighted)
-//        view.setBackgroundImage(NSImage.imageWithColor(NSColor.lightOrange), for: .hover)
+        view.setBackgroundImage(NSImage.imageWithColor(NSColor.lightBlue), for: .normal)
+        view.setBackgroundImage(NSImage.imageWithColor(NSColor.lightGreen), for: .selected)
+        view.setBackgroundImage(NSImage.imageWithColor(NSColor.red), for: .highlighted)
+        view.setBackgroundImage(NSImage.imageWithColor(NSColor.lightOrange), for: .hover)
 
 //        view.wantsLayer = true
 //        view.layer?.borderColor = NSColor.green.cgColor
@@ -185,6 +185,17 @@ class ViewController: NSViewController {
         return view
     }()
     
+    lazy var btnTen: NNButton = {
+        let view = NNButton(type: .type2)
+        view.setTitle("嗯，当不适合的文本自动以多行显示时，没有选择吗？我应该手动插入换行…", for: .normal)
+        view.font = NSFont.systemFont(ofSize: 13)
+        view.bezelStyle = .regularSquare
+        view.lineBreakMode = .byCharWrapping
+        view.addTarget(self, action: #selector(handleActionBtn(_:)))
+
+        return view
+    }()
+    
     @objc func handleActionBtn(_ sender: NNButton) {
 //        sender.selected = !sender.selected
 //        DDLog("\(sender)_\(sender.selected)_\(sender.isHighlighted)")
@@ -214,7 +225,6 @@ class ViewController: NSViewController {
         view.wantsLayer = true;
         view.layer!.backgroundColor = NSColor.white.cgColor;
         
-        
 //        stackView.addArrangedSubview(btnOne)
 //        stackView.addArrangedSubview(btnTwo)
 //        stackView.addArrangedSubview(btnThree)
@@ -231,12 +241,12 @@ class ViewController: NSViewController {
         btnSeven.layer?.cornerRadius = 5
         btnEight.layer?.cornerRadius = 5
 
-        itemList = [btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnEight, btnNine]
+        itemList = [btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnEight, btnNine, btnTen]
         let rowCount: Int = itemList.count%4 == 0 ? itemList.count/4 : itemList.count/4 + 1
         let rect = CGRectMake(0, 0, view.frame.width, CGFloat(rowCount*70))
         setupConstraint(rect)
         
-        view.getViewLayer()
+//        view.getViewLayer()
         print(view.subviews)
     }
 
@@ -275,6 +285,9 @@ class ViewController: NSViewController {
             let sender = e.element;
             sender.frame = rect;
             view.addSubview(sender)
+            if e.offset == 0 {
+                DDLog(rect)
+            }
         }
     }
 

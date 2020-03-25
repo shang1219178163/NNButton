@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'NNButton'
-  s.version          = '1.0.1'
+  s.version          = '1.1.0'
   s.summary          = 'A short description of NNButton.'
 
 # This description is used to generate tags and improve search results.
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform = :osx
-  s.osx.deployment_target = "10.10"
+  s.osx.deployment_target = "10.12"
 
   s.source_files = 'NNButton/Classes/**/*'
 
