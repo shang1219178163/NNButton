@@ -26,11 +26,17 @@ typedef NS_ENUM(NSInteger, NNButtonType) {
     NNButtonType2 = 2,      //backgroud: blue , text: white
 };
 
+///实时返回对应状态事件
+- (void)stateBlock:(void(^)(NNButton *sender, NNControlState state))block;
+
+
 lazy var btnFive: NNButton = {
     let view = NNButton(type: .typeText)
     view.setTitle("NNButton_typeText", for: .normal)
 //        view.isEnabled = false
-
+    view.viewBlock { (sender, state) in
+        DDLog(sender, state)
+    }
     view.addTarget(self, action: #selector(handleActionBtn(_:)))
     return view
 }()

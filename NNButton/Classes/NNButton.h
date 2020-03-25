@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)buttonWithType:(NNButtonType)buttonType;
 
 @property(nonatomic, assign) NNButtonType buttonType;
+@property(nonatomic, copy) void(^block)(NNButton *sender, NNControlState state);
 
 @property(nonatomic, assign) BOOL selected;
 @property(nonatomic, assign) BOOL showHighlighted;
@@ -57,6 +58,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (nullable NSColor *)borderColorForState:(NNControlState)state;
 - (nullable NSNumber *)borderWidthForState:(NNControlState)state;
 - (nullable NSNumber *)cornerRadiusForState:(NNControlState)state;
+
+///实时返回对应状态事件
+- (void)stateBlock:(void(^)(NNButton *sender, NNControlState state))block;
 
 @end
 

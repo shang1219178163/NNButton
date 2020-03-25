@@ -293,6 +293,9 @@ NSString * const kCornerRadius = @"CornerRadius";
 }
 
 - (void)updateUIWithState:(NNControlState)state {
+    if (self.block) {
+        self.block(self, state);
+    }
     if (state == NNControlStateHighlighted && self.showHighlighted == false) {
         return;
     }
@@ -346,6 +349,11 @@ NSString * const kCornerRadius = @"CornerRadius";
     }
     [self setNeedsDisplay];
 }
+
+- (void)stateBlock:(void(^)(NNButton *sender, NNControlState state))block{
+    self.block = block;
+}
+
 
 #pragma mark -set
 
