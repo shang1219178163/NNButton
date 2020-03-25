@@ -32,6 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return window
     }()
 
+    // MARK: -life cycle
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         window.makeKeyAndOrderFront(nil)

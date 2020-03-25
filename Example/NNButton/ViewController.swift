@@ -177,6 +177,14 @@ class ViewController: NSViewController {
         return view
     }()
     
+    lazy var btnNine: NSButton = {
+        let view = NSButton(title: "\n嗯，当不适合的文本自动以多行显示时，没有选择吗？我应该手动插入换行…\n", target: self, action: #selector(handleActionBtn(_:)))
+        view.bezelStyle = .regularSquare
+        view.lineBreakMode = .byCharWrapping
+
+        return view
+    }()
+    
     @objc func handleActionBtn(_ sender: NNButton) {
 //        sender.selected = !sender.selected
 //        DDLog("\(sender)_\(sender.selected)_\(sender.isHighlighted)")
@@ -223,11 +231,12 @@ class ViewController: NSViewController {
         btnSeven.layer?.cornerRadius = 5
         btnEight.layer?.cornerRadius = 5
 
-        itemList = [btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnEight]
-        
-        let rect = CGRectMake(0, 0, view.frame.width, 100)
+        itemList = [btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnEight, btnNine]
+        let rowCount: Int = itemList.count%4 == 0 ? itemList.count/4 : itemList.count/4 + 1
+        let rect = CGRectMake(0, 0, view.frame.width, CGFloat(rowCount*70))
         setupConstraint(rect)
         
+        view.getViewLayer()
         print(view.subviews)
     }
 
