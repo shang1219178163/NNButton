@@ -78,7 +78,7 @@ lazy var btnEight: NNButton = {
 ```
 ## Requirements
 
-    osx: 10.10
+    osx: 10.12
 
 ## Installation
 
