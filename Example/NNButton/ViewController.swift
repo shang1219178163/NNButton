@@ -189,8 +189,7 @@ class ViewController: NSViewController {
         let view = NNButton(type: .type2)
         view.setTitle("嗯，当不适合的文本自动以多行显示时，没有选择吗？我应该手动插入换行…", for: .normal)
         view.font = NSFont.systemFont(ofSize: 13)
-        view.bezelStyle = .regularSquare
-        view.lineBreakMode = .byCharWrapping
+
         view.addTarget(self, action: #selector(handleActionBtn(_:)))
 
         return view
