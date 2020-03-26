@@ -74,18 +74,19 @@ NSString * const kCornerRadius = @"CornerRadius";
     self.lineBreakMode = NSLineBreakByWordWrapping;
     
     CGFloat padding = 8.0;
-    CGSize maxSize = CGSizeMake(self.bounds.size.width - padding*2, CGFLOAT_MAX);
+//    CGSize maxSize = CGSizeMake(self.bounds.size.width - padding*2, CGFLOAT_MAX);
 
     if (self.isAttributedTitle) {
-        CGSize size = [self.attributedTitle boundingRectWithSize:maxSize
-                                                         options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
-                                                         context:nil].size;
-        
-        CGFloat gapX = padding + (maxSize.width - size.width)/2;
-        CGFloat gapY = (CGRectGetHeight(self.bounds) - size.height)/2;
-        CGRect contentRect = NSMakeRect(floorf(gapX), floorf(gapY), size.width, size.height);
-//        NSLog(@"contentRect_%@", @(contentRect));
-        [self.attributedTitle drawInRect:contentRect];
+        [self drawAttributedString:self.attributedTitle padding:padding];
+//        CGSize size = [self.attributedTitle boundingRectWithSize:maxSize
+//                                                         options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+//                                                         context:nil].size;
+//
+//        CGFloat gapX = padding + (maxSize.width - size.width)/2;
+//        CGFloat gapY = (CGRectGetHeight(self.bounds) - size.height)/2;
+//        CGRect contentRect = NSMakeRect(floorf(gapX), floorf(gapY), size.width, size.height);
+////        NSLog(@"contentRect_%@", @(contentRect));
+//        [self.attributedTitle drawInRect:contentRect];
 
     } else {
         if (!self.title) {
@@ -100,31 +101,18 @@ NSString * const kCornerRadius = @"CornerRadius";
                                 }.mutableCopy;
         
         NSAttributedString *attString = [[NSAttributedString alloc]initWithString:self.title attributes:attrDic];
-        CGSize size = [attString boundingRectWithSize:maxSize
-                                              options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
-                                              context:nil].size;
-        
-        CGFloat gapX = padding + (maxSize.width - size.width)/2;
-        CGFloat gapY = (CGRectGetHeight(self.bounds) - size.height)/2;
-        CGRect contentRect = NSMakeRect(floorf(gapX), floorf(gapY), size.width, size.height);
-//        NSLog(@"contentRect_%@", @(contentRect));
-        [attString drawInRect:contentRect];
+        [self drawAttributedString:attString padding:padding];
+
+//        CGSize size = [attString boundingRectWithSize:maxSize
+//                                              options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+//                                              context:nil].size;
+//
+//        CGFloat gapX = padding + (maxSize.width - size.width)/2;
+//        CGFloat gapY = (CGRectGetHeight(self.bounds) - size.height)/2;
+//        CGRect contentRect = NSMakeRect(floorf(gapX), floorf(gapY), size.width, size.height);
+////        NSLog(@"contentRect_%@", @(contentRect));
+//        [attString drawInRect:contentRect];
     }
-        
-//    if (self.title) {
-//        NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle defaultParagraphStyle]mutableCopy];
-//        paraStyle.alignment = self.alignment ? self.alignment : NSTextAlignmentCenter;
-//
-//        NSDictionary *attrDic = @{NSParagraphStyleAttributeName: paraStyle,
-//                                  NSForegroundColorAttributeName: self.titleColor ? : NSColor.labelColor,
-//                                  NSFontAttributeName: self.font,
-//                                }.mutableCopy;
-//
-//        NSAttributedString *attString = [[NSAttributedString alloc]initWithString:self.title attributes:attrDic];
-//        CGFloat fontHeight = ceil(self.font.boundingRectForFont.size.height);
-//        CGFloat gapY = CGRectGetMidY(self.bounds) - fontHeight/2;
-//        [attString drawInRect:NSMakeRect(0, gapY, self.frame.size.width, fontHeight)];
-//    }
 }
 
 - (void)viewWillMoveToSuperview:(NSView *)newSuperview {
@@ -172,6 +160,18 @@ NSString * const kCornerRadius = @"CornerRadius";
 }
 
 #pragma mark -funtions
+- (void)drawAttributedString:(NSAttributedString *)attributedString padding:(CGFloat)padding{
+    CGSize maxSize = CGSizeMake(self.bounds.size.width - padding*2, CGFLOAT_MAX);
+    CGSize size = [attributedString boundingRectWithSize:maxSize
+                                                 options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+                                                 context:nil].size;
+    
+    CGFloat gapX = padding + (maxSize.width - size.width)/2;
+    CGFloat gapY = (CGRectGetHeight(self.bounds) - size.height)/2;
+    CGRect contentRect = NSMakeRect(floorf(gapX), floorf(gapY), size.width, size.height);
+//        NSLog(@"contentRect_%@", @(contentRect));
+    [attributedString drawInRect:contentRect];
+}
 
 + (instancetype)buttonWithType:(NNButtonType)buttonType{
     NNButton *sender = [[NNButton alloc] initWithFrame:CGRectZero];
