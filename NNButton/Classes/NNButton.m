@@ -73,17 +73,20 @@ NSString * const kCornerRadius = @"CornerRadius";
     }
     self.lineBreakMode = NSLineBreakByWordWrapping;
     
+    CGFloat padding = 8.0;
+    CGSize maxSize = CGSizeMake(self.bounds.size.width - padding*2, CGFLOAT_MAX);
+
     if (self.isAttributedTitle) {
-        CGSize size = [self.attributedTitle boundingRectWithSize:self.bounds.size
+        CGSize size = [self.attributedTitle boundingRectWithSize:maxSize
                                                          options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
                                                          context:nil].size;
-                
-        CGFloat gapX = (CGRectGetWidth(self.bounds) - size.width)/2;
+        
+        CGFloat gapX = padding + (maxSize.width - size.width)/2;
         CGFloat gapY = (CGRectGetHeight(self.bounds) - size.height)/2;
-        
         CGRect contentRect = NSMakeRect(floorf(gapX), floorf(gapY), size.width, size.height);
+//        NSLog(@"contentRect_%@", @(contentRect));
         [self.attributedTitle drawInRect:contentRect];
-        
+
     } else {
         if (!self.title) {
             return;
@@ -97,14 +100,14 @@ NSString * const kCornerRadius = @"CornerRadius";
                                 }.mutableCopy;
         
         NSAttributedString *attString = [[NSAttributedString alloc]initWithString:self.title attributes:attrDic];
-        CGSize size = [attString boundingRectWithSize:self.bounds.size
+        CGSize size = [attString boundingRectWithSize:maxSize
                                               options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
                                               context:nil].size;
         
-        CGFloat gapX = (CGRectGetWidth(self.bounds) - size.width)/2;
+        CGFloat gapX = padding + (maxSize.width - size.width)/2;
         CGFloat gapY = (CGRectGetHeight(self.bounds) - size.height)/2;
-
         CGRect contentRect = NSMakeRect(floorf(gapX), floorf(gapY), size.width, size.height);
+//        NSLog(@"contentRect_%@", @(contentRect));
         [attString drawInRect:contentRect];
     }
         
