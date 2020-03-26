@@ -64,29 +64,16 @@ NSString * const kCornerRadius = @"CornerRadius";
 //    NSColor *backgroundColor = self.backgroundColor ? : NSColor.whiteColor;
 //    [backgroundColor set];
 //    NSRectFill(self.bounds);
-        
     
 //    NSColor *backgroundColor = self.backgroundColor ? : NSColor.whiteColor;
     NSImage *image = self.backgroundImage ? : [NSImage imageWithColor:NSColor.whiteColor];
     if (image) {
         [image drawInRect:self.bounds];
     }
-    self.lineBreakMode = NSLineBreakByWordWrapping;
     
     CGFloat padding = 8.0;
-//    CGSize maxSize = CGSizeMake(self.bounds.size.width - padding*2, CGFLOAT_MAX);
-
     if (self.isAttributedTitle) {
         [self drawAttributedString:self.attributedTitle padding:padding];
-//        CGSize size = [self.attributedTitle boundingRectWithSize:maxSize
-//                                                         options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
-//                                                         context:nil].size;
-//
-//        CGFloat gapX = padding + (maxSize.width - size.width)/2;
-//        CGFloat gapY = (CGRectGetHeight(self.bounds) - size.height)/2;
-//        CGRect contentRect = NSMakeRect(floorf(gapX), floorf(gapY), size.width, size.height);
-////        NSLog(@"contentRect_%@", @(contentRect));
-//        [self.attributedTitle drawInRect:contentRect];
 
     } else {
         if (!self.title) {
@@ -94,6 +81,7 @@ NSString * const kCornerRadius = @"CornerRadius";
         }
         NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle defaultParagraphStyle]mutableCopy];
         paraStyle.alignment = self.alignment ? self.alignment : NSTextAlignmentCenter;
+        paraStyle.lineBreakMode = self.lineBreakMode ? self.lineBreakMode : NSLineBreakByWordWrapping;
         
         NSDictionary *attrDic = @{NSParagraphStyleAttributeName: paraStyle,
                                   NSForegroundColorAttributeName: self.titleColor ? : NSColor.labelColor,
@@ -102,16 +90,6 @@ NSString * const kCornerRadius = @"CornerRadius";
         
         NSAttributedString *attString = [[NSAttributedString alloc]initWithString:self.title attributes:attrDic];
         [self drawAttributedString:attString padding:padding];
-
-//        CGSize size = [attString boundingRectWithSize:maxSize
-//                                              options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
-//                                              context:nil].size;
-//
-//        CGFloat gapX = padding + (maxSize.width - size.width)/2;
-//        CGFloat gapY = (CGRectGetHeight(self.bounds) - size.height)/2;
-//        CGRect contentRect = NSMakeRect(floorf(gapX), floorf(gapY), size.width, size.height);
-////        NSLog(@"contentRect_%@", @(contentRect));
-//        [attString drawInRect:contentRect];
     }
 }
 
