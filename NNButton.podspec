@@ -2,7 +2,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'NNButton'
-  s.version          = '1.1.2'
+  s.version          = '1.1.3'
   s.summary          = 'NSButton Subclass'
   s.description      = 'macOS NSButton custom，like UIButton.'
 
@@ -14,7 +14,6 @@ Pod::Spec.new do |s|
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform = :osx,"10.12"
-  s.swift_version = "5.0"
   s.requires_arc = true
   
   s.source_files = 'NNButton/Classes/**/*'
