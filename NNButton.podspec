@@ -2,7 +2,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'NNButton'
-  s.version          = '1.1.5.1'
+  s.version          = '1.1.5.3'
   s.summary          = 'NSButton Subclass'
   s.description      = 'macOS NSButton custom，like UIButton.'
 
