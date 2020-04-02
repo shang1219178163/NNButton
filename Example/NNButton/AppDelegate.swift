@@ -57,12 +57,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //        window.makeKeyAndOrderFront(self)
     }
 
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return true
+    }
+    
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        if flag == false {
+            window.makeKeyAndOrderFront(self)
+            return true
+        }
+        return false;
+    }
+    
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
         
-        
     }
-
 
 }
 

@@ -215,15 +215,14 @@ class ViewController: NSViewController {
         // 设置 ViewController 大小同 mainWindow
         guard let windowRect = NSApplication.shared.mainWindow?.frame else { return }
         view = NSView(frame: windowRect)
+        view.wantsLayer = true;
+        view.layer?.backgroundColor = NSColor.white.cgColor;
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        view.wantsLayer = true;
-        view.layer!.backgroundColor = NSColor.white.cgColor;
-        
+        // Do any additional setup after loading the view.        
 //        stackView.addArrangedSubview(btnOne)
 //        stackView.addArrangedSubview(btnTwo)
 //        stackView.addArrangedSubview(btnThree)
