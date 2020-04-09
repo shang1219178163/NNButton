@@ -163,10 +163,10 @@
 		ED83F67A20348A760038D96B /* NNButton */ = {
 			isa = PBXGroup;
 			children = (
-				14778722242861AC00D438CC /* Resource */,
 				147787202428613700D438CC /* View */,
 				ED83F67B20348A760038D96B /* AppDelegate.swift */,
 				14778727242868C400D438CC /* ViewController.swift */,
+				14778722242861AC00D438CC /* Resource */,
 			);
 			path = NNButton;
 			sourceTree = "<group>";
