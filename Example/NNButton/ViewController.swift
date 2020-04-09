@@ -191,6 +191,12 @@ class ViewController: NSViewController {
         view.font = NSFont.systemFont(ofSize: 13)
 
         view.addTarget(self, action: #selector(handleActionBtn(_:)))
+        view.stateBlock { (sender, state) in
+            
+            DispatchQueue.main.async {
+                sender.isHidden = (state == .hover)
+            }
+        }
 
         return view
     }()
