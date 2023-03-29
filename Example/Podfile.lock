@@ -1,6 +1,6 @@
 PODS:
   - Masonry (1.1.0)
-  - NNButton (1.1.5.3)
+  - NNButton (2.0.0)
   - SnapKit (5.6.0)
   - SnapKitExtend (1.1.0):
     - SnapKit
@@ -26,11 +26,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  NNButton: 5ff24013480dc6012be208bc5b13e2429002cae1
+  NNButton: 8e3d83e927dc100ab116a2759469427011e8a9b4
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SnapKitExtend: aa30cf37196195fae9c4354686cc7710184ebfcc
   SwiftExpand: 8d771e69215141c0c6527fb5fb1ae39e89122a93
 
 PODFILE CHECKSUM: 3e03ba86053a112e26719598545b9bb9670bbf6f
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.0
