@@ -1,4 +1,4 @@
-platform :osx, '10.12'
+platform :osx, '10.13'
 use_frameworks!
 
 target 'NNButton_Example' do
@@ -8,11 +8,22 @@ target 'NNButton_Example' do
   pod 'SnapKit'
   pod 'SnapKitExtend'
   
-  pod 'CocoaExpand'
+  pod 'SwiftExpand'
   
   target 'NNButton_Tests' do
     inherit! :search_paths
 
     
+  end
+end
+
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    if target.respond_to?(:product_type) and target.product_type == "com.apple.product-type.bundle"
+      target.build_configurations.each do |config|
+        config.build_settings["CODE_SIGNING_ALLOWED"] = false
+      end
+    end
   end
 end

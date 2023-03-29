@@ -18,8 +18,8 @@ typedef NS_OPTIONS(NSInteger, NNControlState) {
 
 typedef NS_ENUM(NSInteger, NNButtonType) {
     NNButtonTypeText = 0,   //just text
-    NNButtonType1 = 1,      //backgroud: white , text: blue, has bordColor
-    NNButtonType2 = 2,      //backgroud: blue , text: white
+    NNButtonTypeOutlined = 1,      //backgroud: white , text: blue, has bordColor
+    NNButtonTypeElevated = 2,      //backgroud: blue , text: white
 };
 
 NS_ASSUME_NONNULL_BEGIN

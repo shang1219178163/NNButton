@@ -8,7 +8,7 @@
 
 import Cocoa
 import AppKit
-import CocoaExpand
+import SwiftExpand
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -42,19 +42,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let contentViewController = ViewController() // or ViewController(nibName:nil, bundle: nil)
         window.contentViewController = contentViewController
         
-//        let storyboard: NSStoryboard = NSStoryboard(name: "Main", bundle: nil)
-//        if let windowVC = storyboard.instantiateInitialController() as? NSWindowController {
-//            self.window = windowVC.window
-//            window?.contentMinSize = CGSize(width: kScreenWidth*0.7, height: kScreenHeight*0.7)
-//            windowVC.contentViewController = NNButtonStyleController()
-//        }
-        
-
-//        let controller = storyboard.instantiateController(identifier: "ViewController")
-        
-//        let controller = NNButtonStyleController()
-//        window.contentViewController = controller
-//        window.makeKeyAndOrderFront(self)
+        window.makeKeyAndOrderFront(self)
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {

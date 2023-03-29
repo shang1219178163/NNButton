@@ -15,10 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSColor (Ext)
 
-@property(class, nonatomic, strong, readonly) NSColor *lightBlue;
-@property(class, nonatomic, strong, readonly) NSColor *lightOrange;
-@property(class, nonatomic, strong, readonly) NSColor *lightGreen;
-@property(class, nonatomic, strong, readonly) NSColor *line;
+//@property(class, nonatomic, strong, readonly) NSColor *lightBlue;
+//@property(class, nonatomic, strong, readonly) NSColor *lightOrange;
+//@property(class, nonatomic, strong, readonly) NSColor *lightGreen;
+//@property(class, nonatomic, strong, readonly) NSColor *line;
 
 + (NSColor *)hexValue:(NSInteger)rgbValue alpha:(CGFloat)alpha;
 

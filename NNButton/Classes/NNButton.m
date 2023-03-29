@@ -113,10 +113,12 @@ NSString * const kCornerRadius = @"CornerRadius";
 
 #pragma -NSEvent
 - (void)mouseEntered:(NSEvent *)theEvent {
+//    NSLog(@"mouseEntered:%@", theEvent);
     self.hover = true;
 }
 
 - (void)mouseExited:(NSEvent *)theEvent {
+//    NSLog(@"mouseExited:%@", theEvent);
     self.hover = false;
 }
 
@@ -158,13 +160,13 @@ NSString * const kCornerRadius = @"CornerRadius";
     [sender setTitle:@"NNButton" forState:NNControlStateNormal];
     [sender setTitleColor:NSColor.systemBlueColor forState:NNControlStateNormal];
     switch (buttonType) {
-        case NNButtonType1:
+        case NNButtonTypeOutlined:
         {
             [sender setTitleColor:NSColor.labelColor forState:NNControlStateNormal];
 //            [sender setBorderColor:NSColor.labelColor forState:NNControlStateNormal];
         }
             break;
-        case NNButtonType2:
+        case NNButtonTypeElevated:
         {
             [sender setTitleColor:NSColor.whiteColor forState:NNControlStateNormal];
             
@@ -324,7 +326,7 @@ NSString * const kCornerRadius = @"CornerRadius";
 //    self.layer.cornerRadius = [self.mdicState[kCornerRadius] floatValue];
         
     switch (self.buttonType) {
-        case NNButtonType1:
+        case NNButtonTypeOutlined:
         {
             if (state == NNControlStateDisabled) {
                 self.layer.borderColor = NSColor.lightGrayColor.CGColor;
@@ -346,7 +348,7 @@ NSString * const kCornerRadius = @"CornerRadius";
             }
         }
             break;
-        case NNButtonType2:
+        case NNButtonTypeElevated:
         {
             if (state == NNControlStateDisabled) {
                 self.titleColor = NSColor.whiteColor;

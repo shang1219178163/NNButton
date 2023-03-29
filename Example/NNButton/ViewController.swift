@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import CocoaExpand
+import SwiftExpand
 import NNButton
 
 
@@ -42,10 +42,10 @@ class ViewController: NSViewController {
         view.setTitleColor(NSColor.white, for: .highlighted)
         view.setTitleColor(NSColor.orange, for: .hover)
 
-        view.setBackgroundImage(NSImage.imageWithColor(NSColor.lightBlue), for: .normal)
-        view.setBackgroundImage(NSImage.imageWithColor(NSColor.lightGreen), for: .selected)
-        view.setBackgroundImage(NSImage.imageWithColor(NSColor.red), for: .highlighted)
-        view.setBackgroundImage(NSImage.imageWithColor(NSColor.lightOrange), for: .hover)
+        view.setBackgroundImage(NSImage(color: NSColor.lightBlue), for: .normal)
+        view.setBackgroundImage(NSImage(color: NSColor.lightGreen), for: .selected)
+        view.setBackgroundImage(NSImage(color: NSColor.red), for: .highlighted)
+        view.setBackgroundImage(NSImage(color: NSColor.lightOrange), for: .hover)
 
 //        view.wantsLayer = true
 //        view.layer?.borderColor = NSColor.green.cgColor
@@ -95,12 +95,12 @@ class ViewController: NSViewController {
 //        view.setTitleColor(NSColor.orange, for: .hover)
 //        view.setTitleColor(NSColor.red, for: .normal)
 
-        view.setBackgroundImage(NSImage.imageWithColor(NSColor.lightBlue), for: .normal)
-//        view.setBackgroundImage(NSImage.imageWithColor(NSColor.white), for: .hover)
+        view.setBackgroundImage(NSImage(color: NSColor.lightBlue), for: .normal)
+//        view.setBackgroundImage(NSImage(color: NSColor.white), for: .hover)
 
-        view.setBackgroundImage(NSImage.imageWithColor(NSColor.lightGreen), for: .selected)
-//        view.setBackgroundImage(NSImage.imageWithColor(NSColor.lightBlue), for: .highlighted)
-//        view.setBackgroundImage(NSImage.imageWithColor(NSColor.white), for: .highlighted)
+        view.setBackgroundImage(NSImage(color: NSColor.lightGreen), for: .selected)
+//        view.setBackgroundImage(NSImage(color: NSColor.lightBlue), for: .highlighted)
+//        view.setBackgroundImage(NSImage(color: NSColor.white), for: .highlighted)
         view.setBorderColor(NSColor.red, for: .hover)
 
 //        view.wantsLayer = true
@@ -123,7 +123,7 @@ class ViewController: NSViewController {
         
         view.setTitleColor(NSColor.lightBlue, for: .normal)
 
-//        view.setBackgroundImage(NSImage.imageWithColor(NSColor.white), for: .normal)
+//        view.setBackgroundImage(NSImage(color: NSColor.white), for: .normal)
         
         view.setBorderColor(view.titleColor, for: .normal)
         view.setBorderWidth(3, for: .normal)
@@ -141,8 +141,8 @@ class ViewController: NSViewController {
     }()
     
     lazy var btnFive: NNButton = {
-        let view = NNButton(type: .typeText)
-        view.setTitle("NNButton_typeText", for: .normal)
+        let view = NNButton(type: .text)
+        view.setTitle("NNButton_Text", for: .normal)
         view.stateBlock { (sender, state) in
             DDLog(sender, state)
         }
@@ -152,8 +152,8 @@ class ViewController: NSViewController {
     }()
     
     lazy var btnSix: NNButton = {
-        let view = NNButton(type: .type1)
-        view.setTitle("NNButton_type1", for: .normal)
+        let view = NNButton(type: .outlined)
+        view.setTitle("NNButton_outlined", for: .normal)
         view.setTitleColor(NSColor.lightBlue, for: .normal)
 
         view.addTarget(self, action: #selector(handleActionBtn(_:)))
@@ -161,15 +161,15 @@ class ViewController: NSViewController {
     }()
     
     lazy var btnSeven: NNButton = {
-        let view = NNButton(type: .type2)
-        view.setTitle("NNButton_type2", for: .normal)
+        let view = NNButton(type: .elevated)
+        view.setTitle("NNButton_elevated", for: .normal)
 
         view.addTarget(self, action: #selector(handleActionBtn(_:)))
         return view
     }()
     
     lazy var btnEight: NNButton = {
-        let view = NNButton(type: .type2)
+        let view = NNButton(type: .elevated)
         view.setTitle("NNButton_disabled", for: .normal)
         view.isEnabled = false
 
@@ -186,16 +186,16 @@ class ViewController: NSViewController {
     }()
     
     lazy var btnTen: NNButton = {
-        let view = NNButton(type: .type2)
-        view.setTitle("嗯，当不适合的文本自动以多行显示时，没有选择吗？我应该手动插入换行…", for: .normal)
+        let view = NNButton(type: .elevated)
+        view.setTitle("btnTen嗯，当不适合的文本自动以多行显示时，没有选择吗？我应该手动插入换行…", for: .normal)
         view.font = NSFont.systemFont(ofSize: 13)
 
         view.addTarget(self, action: #selector(handleActionBtn(_:)))
         view.stateBlock { (sender, state) in
             
-            DispatchQueue.main.async {
-                sender.isHidden = (state == .hover)
-            }
+//            DispatchQueue.main.async {
+//                sender.isHidden = (state == .hover)
+//            }
         }
 
         return view
@@ -219,7 +219,11 @@ class ViewController: NSViewController {
     // MARK: -lifecycle
     override func loadView() {
         // 设置 ViewController 大小同 mainWindow
-        guard let windowRect = NSApplication.shared.mainWindow?.frame else { return }
+
+        guard let windowRect = NSApplication.shared.windows.first?.frame else {
+            print("window 不能为空");
+            return
+        }
         view = NSView(frame: windowRect)
         view.wantsLayer = true;
         view.layer?.backgroundColor = NSColor.white.cgColor;
@@ -247,7 +251,7 @@ class ViewController: NSViewController {
 
         itemList = [btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnEight, btnNine, btnTen]
         let rowCount: Int = itemList.count%4 == 0 ? itemList.count/4 : itemList.count/4 + 1
-        let rect = CGRectMake(0, 0, view.frame.width, CGFloat(rowCount*70))
+        let rect = CGRect(0, 0, view.frame.width, CGFloat(rowCount*70))
         setupConstraint(rect)
         
 //        view.getViewLayer()
